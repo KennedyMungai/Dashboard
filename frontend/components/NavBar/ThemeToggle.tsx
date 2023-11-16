@@ -6,8 +6,16 @@ type Props = {
 	children: ReactNode
 }
 
-const ThemeProvider = ({ children }: Props) => {
-	;<NextThemesProvider attribute='class' enableSystem defaultTheme='system'>
-		{children}
-	</NextThemesProvider>
+const ThemeToggle = ({ children }: Props) => {
+	return (
+		<NextThemesProvider
+			attribute='class'
+			enableSystem
+			defaultTheme='system'
+		>
+			{children}
+		</NextThemesProvider>
+	)
 }
+
+export default ThemeToggle
