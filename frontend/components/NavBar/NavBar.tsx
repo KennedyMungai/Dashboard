@@ -5,7 +5,7 @@ type Props = {}
 
 const NavBar = (props: Props) => {
 	return (
-		<nav className='h-[10vh] shadow-sm dark:shadow-slate-700 flex justify-between'>
+		<nav className='h-[10vh] shadow-sm dark:shadow-slate-700 flex justify-between items-center p-5'>
 			<div className=''>
 				<h1 className='w-full flex justify-center uppercase text-2xl'>
 					Something Something Charts App
