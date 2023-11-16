@@ -19,7 +19,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={open_sans.className}>
-				<ThemeProvider><NavBar />{children}</ThemeProvider>
+				<ThemeProvider>
+					<NavBar />
+					{children}
+				</ThemeProvider>
 			</body>
 		</html>
 	)
