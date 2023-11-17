@@ -3,6 +3,7 @@ import {
     PayloadAction,
     createAsyncThunk
 } from "@reduxjs/toolkit"
+import axios from "axios"
 
 const initialState: ISupermarketSales = {
     data: {
@@ -17,3 +18,9 @@ const initialState: ISupermarketSales = {
         shopping_hour_data: { labels: [], label: '', A: { label: '', data: [] }, B: { label: '', data: [] }, C: { label: '', data: [] } }
     }
 }
+
+export const getSupermarketSales = createAsyncThunk("root/supermarketSales", async () => {
+    const response = await axios("http://localhost:8000/")
+    const data = response.data
+    return data
+})
