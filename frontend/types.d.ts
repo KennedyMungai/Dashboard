@@ -10,6 +10,8 @@ interface ISupermarketSales {
         product_line_by_quantity: product_line_by_quantity,
         shopping_hour_data: shopping_hour_data
     }
+    isLoading: false
+    isLoaded: false
 }
 
 interface total_sales_per_branch {
