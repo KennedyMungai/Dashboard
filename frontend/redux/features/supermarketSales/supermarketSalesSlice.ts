@@ -4,6 +4,7 @@ import {
     createAsyncThunk
 } from "@reduxjs/toolkit"
 import axios from "axios"
+import { RootState } from "../store"
 
 const initialState: ISupermarketSales = {
     data: {
@@ -16,7 +17,9 @@ const initialState: ISupermarketSales = {
         payment_methods: { labels: [], data: [], label: '' },
         product_line_by_quantity: { labels: [], data: [], label: '' },
         shopping_hour_data: { labels: [], label: '', A: { label: '', data: [] }, B: { label: '', data: [] }, C: { label: '', data: [] } }
-    }
+    },
+    isLoaded: false,
+    isLoading: false
 }
 
 export const getSupermarketSales = createAsyncThunk("root/supermarketSales", async () => {
@@ -24,3 +27,30 @@ export const getSupermarketSales = createAsyncThunk("root/supermarketSales", asy
     const data = response.data
     return data
 })
+
+export const supermarketSalesSlice = createSlice({
+    name: 'Supermarket Sales',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(getSupermarketSales.pending, (state) => {
+                state.isLoading = true
+                state.isLoaded = false
+            })
+            .addCase(getSupermarketSales.fulfilled, (state, {payload}: PayloadAction<ISupermarketSales>) => {
+                state.isLoading = false
+                state.isLoaded = true
+                state.data = payload.data
+            })
+            .addCase(getSupermarketSales.rejected, (state) => {
+                state.isLoading = false
+                state.isLoaded = false
+                state.data = initialState.data
+            })
+    }
+})
+
+export const selectSupermarketSalesData = (state:RootState) => state.supermarket.data
+
+export default supermarketSalesSlice.reducer
