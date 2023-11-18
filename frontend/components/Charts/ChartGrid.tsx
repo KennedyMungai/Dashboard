@@ -48,7 +48,7 @@ const ChartGrid = (props: Props) => {
 							Line Chart Data for the supermarket data
 						</CardDescription>
 					</CardHeader>
-					<CardContent className='flex flex-1'>
+					<CardContent className='flex m-2 p-2'>
 						<Line
 							datasetIdKey='id'
 							data={{
