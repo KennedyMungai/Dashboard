@@ -12,8 +12,16 @@ const ChartGrid = (props: Props) => {
 
 	return (
 		<div className='w-full h-full p-5 flex flex-1 flex-wrap'>
-			<GrossProfit data={salesData.gross_income_data} title={'Gross Profit'} description={'The gross profit of the supermarket'} />	
-			<BarChart data={salesData.total_sales_per_branch} />
+			<GrossProfit
+				data={salesData.gross_income_data}
+				title={'Gross Profit'}
+				description={'The gross profit of the supermarket'}
+			/>
+			<BarChart
+				data={salesData.total_sales_per_branch}
+				title='Sales By Branch'
+				description='The branch sales'
+			/>
 		</div>
 	)
 }
