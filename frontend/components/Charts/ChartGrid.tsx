@@ -40,7 +40,6 @@ const ChartGrid = (props: Props) => {
 
 	return (
 		<div className='w-full h-full p-5 flex flex-1 flex-wrap'>
-			<div className=''>
 				<Card className='w-[20rem]'>
 					<CardHeader>
 						<CardTitle>Line Chart</CardTitle>
@@ -74,7 +73,6 @@ const ChartGrid = (props: Props) => {
 						/>
 					</CardContent>
 				</Card>
-			</div>
 		</div>
 	)
 }
