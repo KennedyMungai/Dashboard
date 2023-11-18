@@ -11,7 +11,7 @@ const ChartGrid = (props: Props) => {
 	const salesData = useAppSelector(selectSupermarketSalesData)
 
 	return (
-		<div className='w-full h-full p-5 flex flex-1 flex-wrap'>
+		<div className='w-full h-full p-5 flex flex-1 flex-wrap gap-5'>
 			<GrossProfit
 				data={salesData.gross_income_data}
 				title={'Gross Profit'}
